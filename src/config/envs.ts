@@ -8,6 +8,8 @@ const schema = Joi.object({
   PORT: Joi.number().required().default(3001),
   MICROSERVICES_PRODUCT_HOST: Joi.string().required(),
   MICROSERVICES_PRODUCT_PORT: Joi.number().required(),
+  MICROSERVICES_ORDER_HOST: Joi.string().required(),
+  MICROSERVICES_ORDER_PORT: Joi.number().required(),
 }).unknown(true);
 
 const { error, value } = schema.validate(process.env);
@@ -22,6 +24,10 @@ export const envs: EnvFileInterface = {
     product: {
       host: envVars.MICROSERVICES_PRODUCT_HOST,
       port: envVars.MICROSERVICES_PRODUCT_PORT,
+    },
+    order: {
+      host: envVars.MICROSERVICES_ORDER_HOST,
+      port: envVars.MICROSERVICES_ORDER_PORT
     }
   }
 };

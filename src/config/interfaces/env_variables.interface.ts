@@ -1,5 +1,7 @@
 export interface EnvVars {
   PORT: number,
   MICROSERVICES_PRODUCT_HOST: string,
-  MICROSERVICES_PRODUCT_PORT: number
+  MICROSERVICES_PRODUCT_PORT: number,
+  MICROSERVICES_ORDER_HOST: string,
+  MICROSERVICES_ORDER_PORT: number
 }
