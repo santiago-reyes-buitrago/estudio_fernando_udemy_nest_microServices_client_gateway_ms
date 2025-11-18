@@ -24,4 +24,7 @@ async function bootstrap() {
   await app.listen(envs.port);
   logger.log(`Gateway listen in port ${envs.port}`);
 }
-bootstrap();
+bootstrap().catch((err) => {
+    console.error('Error starting the app:', err);
+    process.exit(1);
+});
